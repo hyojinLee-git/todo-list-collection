@@ -1,7 +1,3 @@
-main .edit-task {
-    display: none;
-}
-
 main .edit-task form {
     height: 70%;
 }

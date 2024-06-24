@@ -1,7 +1,3 @@
-main .add-task {
-    display: none;
-}
-
 main .add-task form {
     height: 70%;
 }
