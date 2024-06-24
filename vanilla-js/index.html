@@ -26,72 +26,31 @@
             <h1>to<span>do.</span></h1>
         </header>
         <main>
-            <section class="task">
+            <section class="task hide">
                 <h2>Tasks</h2>
-                <ul>
-                    <li>
-                        <button>
-                            <img
-                                width="20px"
-                                height="20px"
-                                src="../assets/icons/radio_button_unchecked.svg"
-                            />
-                        </button>
-                        <div>글씨왜이상해보이냐</div>
-                        <div>
-                            <button>
-                                <img
-                                    width="20px"
-                                    height="20px"
-                                    src="../assets/icons/edit.svg"
-                                />
-                            </button>
-                            <button>
-                                <img
-                                    width="20px"
-                                    height="20px"
-                                    src="../assets/icons/delete.svg"
-                                />
-                            </button>
-                        </div>
-                    </li>
-                    <li>
-                        <button>
-                            <img
-                                width="20px"
-                                height="20px"
-                                src="../assets/icons/radio_button_checked.svg"
-                            />
-                        </button>
-                        <span>할일</span>
-                        <span>
-                            <button>편집</button>
-                            <button>삭제</button>
-                        </span>
-                    </li>
-                </ul>
+                <ul id="task-list"></ul>
                 <div class="add-btn-wrapper">
-                    <button class="add-btn">Add Task</button>
+                    <button class="add-btn" id="add-task-btn">Add Task</button>
                 </div>
             </section>
-            <section class="add-task">
+            <section class="add-task hide">
                 <form>
                     <label>
                         <h2>Add Task</h2>
                     </label>
-                    <input type="text" />
+                    <input id="add-input" type="text" />
                 </form>
                 <div class="bottom-btn-wrapper">
-                    <button>
+                    <button class="back">
                         <img
                             height="40px"
                             src="../assets/icons/chevron_left.svg"
                         />
                     </button>
-                    <button class="add-btn">Add</button>
+                    <button id="add-btn">Add</button>
                 </div>
             </section>
-            <section class="edit-task">
+            <section class="edit-task hide">
                 <form>
                     <label>
                         <h2>Edit Task</h2>
@@ -99,7 +58,7 @@
                     <input type="text" />
                 </form>
                 <div class="bottom-btn-wrapper">
-                    <button>
+                    <button class="back">
                         <img
                             height="40px"
                             src="../assets/icons/chevron_left.svg"
@@ -109,5 +68,6 @@
                 </div>
             </section>
         </main>
+        <script src="./js/app.js" type="module"></script>
     </body>
 </html>

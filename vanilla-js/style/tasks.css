@@ -1,9 +1,5 @@
-/* main .task {
-    display: none;
-} */
-
 main .task ul {
-    height: 70%;
+    height: 75%;
 }
 
 main .task ul li {
@@ -63,7 +59,7 @@ main .task .add-btn-wrapper {
     justify-content: flex-end;
 }
 
-main .task .add-btn {
+main .task #add-task-btn {
     background-color: #8662f8;
     border-radius: 24px;
     width: 130px;
