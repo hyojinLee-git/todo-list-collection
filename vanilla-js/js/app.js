@@ -32,6 +32,9 @@ class App {
         this.$editButtons.forEach(($editButton) => {
             $editButton.addEventListener("click", this.showEditScene);
         });
+        this.$deleteButtons.forEach(($deleteButton) => {
+            $deleteButton.addEventListener("click", this.deleteTask);
+        });
 
         this.addInputValue = "";
         this.$addInput.value = "";
@@ -45,6 +48,11 @@ class App {
         const tasks = this.$taskList.innerHTML + template(this.addInputValue);
         this.$taskList.innerHTML = tasks;
         this.updateState();
+    }
+
+    deleteTask(e) {
+        const $task = e.target.closest("li");
+        document.querySelector("#task-list").removeChild($task);
     }
 
     changeScene($nextScene) {
@@ -73,6 +81,9 @@ class App {
 
         this.$editButtons.forEach(($editButton) => {
             $editButton.addEventListener("click", this.showEditScene);
+        });
+        this.$deleteButtons.forEach(($deleteButton) => {
+            $deleteButton.addEventListener("click", this.deleteTask);
         });
 
         this.$addButton.addEventListener("click", () => {
