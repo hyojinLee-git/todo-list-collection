@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Todo-list with vanilla js</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style/global.css" />
+        <link rel="stylesheet" href="./style/header.css" />
+        <link rel="stylesheet" href="./style/main.css" />
+        <link rel="stylesheet" href="./style/tasks.css" />
+        <link rel="stylesheet" href="./style/add-task.css" />
+        <link rel="stylesheet" href="./style/edit-task.css" />
+    </head>
+    <body>
+        <header>
+            <h1>to<span>do.</span></h1>
+        </header>
+        <main>
+            <section class="task">
+                <h2>Tasks</h2>
+                <ul>
+                    <li>
+                        <button>
+                            <img
+                                width="20px"
+                                height="20px"
+                                src="../assets/icons/radio_button_unchecked.svg"
+                            />
+                        </button>
+                        <div>글씨왜이상해보이냐</div>
+                        <div>
+                            <button>
+                                <img
+                                    width="20px"
+                                    height="20px"
+                                    src="../assets/icons/edit.svg"
+                                />
+                            </button>
+                            <button>
+                                <img
+                                    width="20px"
+                                    height="20px"
+                                    src="../assets/icons/delete.svg"
+                                />
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <button>
+                            <img
+                                width="20px"
+                                height="20px"
+                                src="../assets/icons/radio_button_checked.svg"
+                            />
+                        </button>
+                        <span>할일</span>
+                        <span>
+                            <button>편집</button>
+                            <button>삭제</button>
+                        </span>
+                    </li>
+                </ul>
+                <div class="add-btn-wrapper">
+                    <button class="add-btn">Add Task</button>
+                </div>
+            </section>
+            <section class="add-task">
+                <form>
+                    <label>
+                        <h2>Add Task</h2>
+                    </label>
+                    <input type="text" />
+                </form>
+                <div class="bottom-btn-wrapper">
+                    <button>
+                        <img
+                            height="40px"
+                            src="../assets/icons/chevron_left.svg"
+                        />
+                    </button>
+                    <button class="add-btn">Add</button>
+                </div>
+            </section>
+            <section class="edit-task">
+                <form>
+                    <label>
+                        <h2>Edit Task</h2>
+                    </label>
+                    <input type="text" />
+                </form>
+                <div class="bottom-btn-wrapper">
+                    <button>
+                        <img
+                            height="40px"
+                            src="../assets/icons/chevron_left.svg"
+                        />
+                    </button>
+                    <button class="edit-btn">Edit</button>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
