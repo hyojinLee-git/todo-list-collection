@@ -3,20 +3,8 @@ import { ReactComponent as RadioButtonUnchecked } from "../../assets/svgs/radio_
 import { ReactComponent as CheckCircle } from "../../assets/svgs/check_circle.svg";
 import { ReactComponent as EditButton } from "../../assets/svgs/edit.svg";
 import { ReactComponent as DeleteButton } from "../../assets/svgs/delete.svg";
-import { useState } from "react";
 
-export default function TaskList({ setCurrentScene }) {
-    const [tasks, setTasks] = useState([
-        {
-            name: "task1",
-            finished: false,
-        },
-        {
-            name: "task2",
-            finished: false,
-        },
-    ]);
-
+export default function TaskList({ setCurrentScene, tasks, setTasks }) {
     const handleRadioButton = (e) => {
         const targetIdx = Number(
             e.currentTarget.closest("li").getAttribute("data-idx")
