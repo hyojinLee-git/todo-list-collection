@@ -5,7 +5,7 @@ import { ReactComponent as EditButton } from "../../assets/svgs/edit.svg";
 import { ReactComponent as DeleteButton } from "../../assets/svgs/delete.svg";
 import { useState } from "react";
 
-export default function TaskList() {
+export default function TaskList({ setCurrentScene }) {
     const [tasks, setTasks] = useState([
         {
             name: "task1",
@@ -17,7 +17,10 @@ export default function TaskList() {
         },
     ]);
 
-    const handleRadioButton = (targetIdx) => {
+    const handleRadioButton = (e) => {
+        const targetIdx = Number(
+            e.currentTarget.closest("li").getAttribute("data-idx")
+        );
         setTasks((prevTasks) => {
             return prevTasks.map((prevTask, idx) => {
                 return idx === targetIdx
@@ -27,16 +30,34 @@ export default function TaskList() {
         });
     };
 
+    const handleAddTaskButton = () => {
+        setCurrentScene("ADD_TASK");
+    };
+
+    const handleEditTaskButton = () => {
+        setCurrentScene("EDIT_TASK");
+    };
+
+    const handleDeleteButton = (e) => {
+        const targetIdx = Number(
+            e.currentTarget.closest("li").getAttribute("data-idx")
+        );
+        setTasks((prevTasks) => {
+            return prevTasks.filter((_, idx) => targetIdx !== idx);
+        });
+    };
+
     return (
         <section className="task">
             <h2>Tasks</h2>
             <ul id="task-list">
                 {tasks.map((task, idx) => (
                     <li
+                        data-idx={idx}
                         className={task.finished ? "finished" : ""}
                         key={`${task}-${idx}`}
                     >
-                        <button onClick={() => handleRadioButton(idx)}>
+                        <button onClick={handleRadioButton}>
                             {task.finished ? (
                                 <CheckCircle width={20} height={20} />
                             ) : (
@@ -46,16 +67,22 @@ export default function TaskList() {
                         <div>{task.name}</div>
                         {task.finished ? (
                             <div>
-                                <button>
+                                <button onClick={handleDeleteButton}>
                                     <DeleteButton width={20} height={20} />
                                 </button>
                             </div>
                         ) : (
                             <div>
-                                <button className="edit-icon-btn">
+                                <button
+                                    onClick={handleEditTaskButton}
+                                    className="edit-icon-btn"
+                                >
                                     <EditButton width={20} height={20} />
                                 </button>
-                                <button className="delete-icon-btn">
+                                <button
+                                    onClick={handleDeleteButton}
+                                    className="delete-icon-btn"
+                                >
                                     <DeleteButton width={20} height={20} />
                                 </button>
                             </div>
@@ -64,7 +91,11 @@ export default function TaskList() {
                 ))}
             </ul>
             <div className="add-btn-wrapper">
-                <button className="add-btn" id="add-task-btn">
+                <button
+                    onClick={handleAddTaskButton}
+                    className="add-btn"
+                    id="add-task-btn"
+                >
                     Add Task
                 </button>
             </div>
