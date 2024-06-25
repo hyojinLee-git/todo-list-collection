@@ -1,5 +1,7 @@
 main .task ul {
     height: 75%;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 /** Task Item */
