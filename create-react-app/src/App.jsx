@@ -1,11 +1,12 @@
 import Header from "./container/Header";
 import TaskList from "./container/TaskList";
 import "./App.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import AddTask from "./container/AddTask";
 import EditTask from "./container/EditTask";
 
 function App() {
+    const editIdxRef = useRef(0);
     const [currentScene, setCurrentScene] = useState("TASK_LIST");
     const [tasks, setTasks] = useState([
         {
@@ -24,6 +25,7 @@ function App() {
             <main>
                 {currentScene === "TASK_LIST" && (
                     <TaskList
+                        editIdxRef={editIdxRef}
                         tasks={tasks}
                         setTasks={setTasks}
                         setCurrentScene={setCurrentScene}
@@ -35,7 +37,14 @@ function App() {
                         setCurrentScene={setCurrentScene}
                     />
                 )}
-                {currentScene === "EDIT_TASK" && <EditTask />}
+                {currentScene === "EDIT_TASK" && (
+                    <EditTask
+                        editIdxRef={editIdxRef}
+                        setCurrentScene={setCurrentScene}
+                        setTasks={setTasks}
+                        editTask={tasks[editIdxRef.current]}
+                    />
+                )}
             </main>
         </>
     );

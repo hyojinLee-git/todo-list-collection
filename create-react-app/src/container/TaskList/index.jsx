@@ -4,7 +4,12 @@ import { ReactComponent as CheckCircle } from "../../assets/svgs/check_circle.sv
 import { ReactComponent as EditButton } from "../../assets/svgs/edit.svg";
 import { ReactComponent as DeleteButton } from "../../assets/svgs/delete.svg";
 
-export default function TaskList({ setCurrentScene, tasks, setTasks }) {
+export default function TaskList({
+    setCurrentScene,
+    tasks,
+    setTasks,
+    editIdxRef,
+}) {
     const handleRadioButton = (e) => {
         const targetIdx = Number(
             e.currentTarget.closest("li").getAttribute("data-idx")
@@ -22,7 +27,11 @@ export default function TaskList({ setCurrentScene, tasks, setTasks }) {
         setCurrentScene("ADD_TASK");
     };
 
-    const handleEditTaskButton = () => {
+    const handleEditTaskButton = (e) => {
+        const targetIdx = Number(
+            e.currentTarget.closest("li").getAttribute("data-idx")
+        );
+        editIdxRef.current = targetIdx;
         setCurrentScene("EDIT_TASK");
     };
 
