@@ -1,3 +1,35 @@
 * {
     box-sizing: border-box;
 }
+button {
+    outline: none;
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+input {
+    outline: none;
+    border: none;
+    padding: none;
+}
+
+html,
+body {
+    background-color: #121215;
+    color: #dfe0fb;
+    font-family: "Lexend Deca";
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-top: 48px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#root {
+    height: 100%;
+}
