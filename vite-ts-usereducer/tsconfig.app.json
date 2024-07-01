@@ -33,6 +33,7 @@
             "@containers/*": ["src/containers/*"],
             "@hooks/*": ["src/hooks/*"],
             "@models/*": ["src/models/*"],
+            "@reducers/*": ["src/reducers/*"],
             "@/*": ["src/*"]
         }
     },
