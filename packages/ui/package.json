@@ -1,0 +1,14 @@
+{
+  "name": "@todo-list-collection/ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "exports": {
+    "./header": "./src/components/Header/index.jsx"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
