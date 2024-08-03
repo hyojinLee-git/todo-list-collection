@@ -4,8 +4,14 @@
   "main": "index.js",
   "repository": "https://github.com/hyojinLee-git/todo-list-collection.git",
   "author": "hyojinLeee-git <splato8899@gmail.com>",
+  "private":true,
   "license": "MIT",
   "devDependencies": {
     "turbo": "^2.0.11"
-  }
+  },
+  "packageManager": "yarn@1.22.18",
+  "workspaces": [
+    "app/*",
+    "packages/*"
+  ]
 }
