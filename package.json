@@ -1,0 +1,11 @@
+{
+  "name": "todo-list-collection",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hyojinLee-git/todo-list-collection.git",
+  "author": "hyojinLeee-git <splato8899@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "turbo": "^2.0.11"
+  }
+}
